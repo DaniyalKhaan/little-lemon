@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+import logo from "../assets/Logo .svg";
+
 
 function Footer() {
   return (
-    <footer className='section'>
+    <footer className='section footer'>
+
+      <div className='container'>
+      <div className='brand'>
+        <a href='#'><img src={logo} alt='Little Lemon Logo'/></a>
+      </div>
       <div>
         <h4>Navigation</h4>
         <ul>
@@ -30,6 +37,8 @@ function Footer() {
         <li><a href='#'>Youtube</a></li>
       </ul>
       </div>
+      </div>
+      
 
     </footer>
   )

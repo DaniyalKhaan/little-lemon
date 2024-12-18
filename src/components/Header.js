@@ -6,11 +6,16 @@ function Header() {
   return (
     <header className='section'>
 
+      <div className='container'>
+
       <a href='#'>
       <img src={logo} alt='Little Lemon Logo'/>
       </a>
 
       <Nav />
+
+      </div>
+
 
 
 
