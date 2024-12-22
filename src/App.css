@@ -1,37 +1,8 @@
-/* 
-      UNIVERSAL STYLING
- */
 
- /* font-family: "Markazi Text", serif;
- font-family: "Karla", serif; */
+
+
+
+
 
  
 
-.section {
-  margin-block: 40px;
-}
-
-header .container {
-
-  display: grid;
-  grid-template-columns: 400px 600px;
-
-
-}
-
-header ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* background-color: red; */
-}
-
-
-
-
-
-
-.footer .container{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
