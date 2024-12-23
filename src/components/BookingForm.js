@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-function BookingForm({availableTimes=["If array is missing"], dispatch}) {
+function BookingForm({availableTimes, dispatch, submitForm}) {
 
-    const [date, setDate] = useState("I am Date");
-    const [time , setTime ] = useState("I am Time");
+    const [date, setDate] = useState("");
+    const [time , setTime ] = useState("");
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState("Occasion");
 
@@ -16,6 +16,7 @@ function BookingForm({availableTimes=["If array is missing"], dispatch}) {
             guests,
             occasion
         }
+        submitForm(formData);
         console.log(formData);
         alert("Reservataion SUbmitted");
     }
@@ -31,7 +32,7 @@ function BookingForm({availableTimes=["If array is missing"], dispatch}) {
        value={date} 
        onChange={(e) => 
        {setDate(e.target.value);
-        dispatch({type: 'UPDATE_TIMES', payload: {date: e.target.value}})
+        dispatch({type: 'UPDATE_TIMES', payload: e.target.value})
        }}/>
   
        <label htmlFor="res-time">Choose time</label>
@@ -39,9 +40,9 @@ function BookingForm({availableTimes=["If array is missing"], dispatch}) {
        value={time}
        onChange={(e) => setTime(e.target.value)}
        id="res-time">
-        {availableTimes.map((t, index) => (
+        {availableTimes?.length > 0 ? availableTimes.map((t, index) => (
             <option key={index} value={t}>{t}</option>
-        ))}
+        )) : <option disabled>No Time Available</option>}
 
       </select>
   
