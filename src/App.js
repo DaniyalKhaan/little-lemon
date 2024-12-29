@@ -12,10 +12,6 @@ function App() {
     <>
     <Main />
 
-
-    {/* <Header />
-    <Main />
-    <Footer /> */}
     
     </>
 

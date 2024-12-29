@@ -1,6 +1,6 @@
 import React, {useEffect, useReducer} from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import Nav from './Nav';
+import Header from './Header';
 import Specials from './Specials';
 import HomePage from './HomePage';
 import Testimonials from './Testimonials';
@@ -8,6 +8,7 @@ import Chicago from './Chicago';
 import BookingPage from './BookingPage';
 import {fetchAPI, submitAPI} from './api';
 import ConfirmedBooking from './ConfirmedBooking';
+import Footer from './Footer';
 
 const Main = () => {
 
@@ -50,15 +51,18 @@ const Main = () => {
 
   return (
     <div>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/specials" element={<Specials />} />
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/chicago" element={<Chicago />} />
-        <Route path="/bookings" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
-        <Route path="/table_booked" element={<ConfirmedBooking />} />
-      </Routes>
+      <Header />
+      <main className='main'>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/about" element={<Chicago />} /> 
+          <Route path="/specials" element={<Specials />} /> 
+          <Route path="/bookings" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
+          <Route path="/table_booked" element={<ConfirmedBooking />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 };

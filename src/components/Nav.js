@@ -1,19 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 
 function Nav() {
+  const location = useLocation();
+  const isActive = path => location.pathname === path;
   return (
-    <nav>
-      <ul className='Nav-links-list'>
-        <li><Link To="/">Home</Link></li>
-        <li><Link To="/specials">Specials</Link></li>
-        <li><Link To="/testomonials">Testomonials</Link></li>
-        <li><Link to="/chicago">About Chicago</Link></li>
-        <li><Link to="/bookings">Bookings</Link></li>
+    <nav className='navbar'>
+      <ul className='nav-links-list card-title'>
+
+        <li className={isActive("/") ? "active" : ""}><Link className={'highlight-text'} to="/">Home</Link></li>
+        <li className={isActive("/specials") ? "active" : ""}><Link className='highlight-text' to="/specials">Specials</Link></li>
+        <li className={isActive("/about") ? "active" : ""}><Link className='highlight-text' to="/about">About</Link></li>
+        <li className={isActive("/testimonials") ? "active" : ""}><Link className='highlight-text' to="/testimonials">Testomonials</Link></li>
+        <li className={isActive("/bookings") ? "active" : ""}><Link className='highlight-text' to="/bookings">Bookings</Link></li>
       </ul>
 
     </nav>
   )
 }
 
-export default Nav
+export default Nav;

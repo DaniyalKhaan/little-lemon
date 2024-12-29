@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+
 
 function ConfirmedBooking() {
   return (
     <>
-    <h2>Congratulation Booking Confirmed.</h2>
+    <section className='booking-done'>
+      <div className='container'>
+        <h2 className='display-title'>Table Reserved</h2>
+        <p className='card-title text-white'>A Table is waiting in Little Lemon for you.</p>
+      </div>
+    </section>
     </>
   )
 }

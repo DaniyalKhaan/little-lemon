@@ -1,0 +1,7 @@
+bgcolor needs to change ( also other colors will need adjustments after changing bg color) : Done
+
+Seamless Navigation needs to be done : DOne
+In form element error msg is still displaying if user enter required field this needs to fix as well : Done
+also seperate files for css should be make
+Also if possible to make resposiveness of the app ( if this takes more than 2 hours then skip it for now)
+
